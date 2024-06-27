@@ -1,0 +1,16 @@
+filesToDeploy:
+  - src/
+  - package.json
+  - package-lock.json
+systemdService:
+  serviceName: nodejs-backend-app.service
+application:
+  applicationPath: /home/nodejs-server/backend-application/nodejs-backend
+  applicationBackupsPath: /home/nodejs-server/backend-application/backups
+  osUserName: nodejs-server
+  osGroupName: nodejs-server
+healthCheck:
+  httpPath: "http://192.168.0.50:15476/"
+  responseCode: "200"
+  checksNumber: 4
+  checkDelay: 3
