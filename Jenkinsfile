@@ -3,12 +3,7 @@ pipeline {
     agent any
     stages {
         
-    stage('Stage 2') {
-            steps {
-                sh ' npm install pm2 -g ' 
-            }
-        }
-    stage('Stage 3') {
+    stage('Install dependencies') {
             steps {
                 sh 'npm install'
             }
