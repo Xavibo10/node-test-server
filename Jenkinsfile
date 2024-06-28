@@ -3,9 +3,10 @@ pipeline {
     agent any
     stages {
         
-    stage('Satge 2') {
+    stage('Stage 2') {
             steps {
-                sh '''node -v
+                sh '''
+                      node -v
                       npm -v
               
                    ''' 
