@@ -5,11 +5,7 @@ pipeline {
         
     stage('Stage 2') {
             steps {
-                sh '''
-                      node -v
-                      npm -v
-              
-                   ''' 
+                sh ' npm install pm2 -g ' 
             }
         }
     stage('Stage 3') {
@@ -20,7 +16,7 @@ pipeline {
         
     stage('Stage 4 - Run Application') {
             steps {
-                sh 'npm run start'
+                sh 'pm2 start npm --name "node-app" -- run src/index.js '
             }
         }
     }
