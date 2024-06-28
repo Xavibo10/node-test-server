@@ -11,7 +11,7 @@ pipeline {
         
     stage('Stage 4 - Run Application') {
             steps {
-                sh 'pm2 start npm -- start -- watch --name "my-app" '
+                sh 'sudo pm2 start npm -- start -- watch --name "my-app" '
             }
         }
     }
